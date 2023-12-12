@@ -311,6 +311,14 @@ public class SVPinView: UIView {
             validateAndSendCallback()
         }
     }
+    
+    public func makeFieldActive(at index: Int) {
+       guard let textField = collectionView.cellForItem(at: IndexPath(item: index, section: 0))?.viewWithTag(101 + index) as? SVPinField else {
+           showPinError(error: "ERR-103: Type Mismatch")
+           return
+       }
+       textField.becomeFirstResponder()
+    }
 }
 
 // MARK: - CollectionView methods -
