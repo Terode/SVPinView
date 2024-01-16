@@ -239,7 +239,7 @@ public class SVPinView: UIView {
     }
     
     fileprivate func showPinError(error: String) {
-        errorView.isHidden = false
+        errorView.isHidden = true
         print("\n----------SVPinView Error----------")
         print(error)
         print("-----------------------------------")
